@@ -2,6 +2,10 @@ git add .
 git commit -m "upload lambda"
 git push
 
-go build -tags lambda.norpc -o bootstrap main.go
+
+set GOOS=linux
+set GOARCH=amd64
+
+go build main.go
 rm main.zip
 zip main.zip main
