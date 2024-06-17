@@ -15,7 +15,7 @@ func SignUp(sig models.SignUp) error {
 
 	defer Db.Close()
 
-	sentence := "INSERT INTO clients (ClientMail, ClientUUID, ClientCreatedDate) VALUES ('" + sig.UserEmail + "','" + sig.UserUUID + "','" + tools.MySQLDate() + "')"
+	sentence := "INSERT INTO business (businessEmail, businessUUID, created_at) VALUES ('" + sig.UserEmail + "','" + sig.UserUUID + "','" + tools.MySQLDate() + "')"
 
 	_, err = Db.Exec(sentence)
 	if err != nil {
