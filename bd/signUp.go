@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"six/models"
 	"six/tools"
+	_ "github.com/go-sql-driver/mysql"
 )
 
 func SignUp(sig models.SignUp) error {
