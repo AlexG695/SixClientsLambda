@@ -42,7 +42,7 @@ func ExecLambda(ctx context.Context, event events.CognitoEventUserPoolsPostConfi
 
 	err := bd.ReadSecret()
 	if err != nil {
-		fmt.Println("error read secret" + err.Error())
+		fmt.Println("ERROR READING SECRET VALUES: " + err.Error())
 		return event, err
 	}
 

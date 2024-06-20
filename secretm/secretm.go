@@ -12,7 +12,7 @@ import (
 
 func GetSecret(secretName string) (models.SecretRDSJson, error) {
 	var secretData models.SecretRDSJson
-	fmt.Println("request secret")
+	fmt.Println("REQUESTING SECRET")
 
 	svc := secretsmanager.NewFromConfig(awsgo.Cfg)
 	clue, err := svc.GetSecretValue(awsgo.Ctx, &secretsmanager.GetSecretValueInput{
@@ -24,6 +24,6 @@ func GetSecret(secretName string) (models.SecretRDSJson, error) {
 	}
 
 	json.Unmarshal([]byte(*clue.SecretString), &secretData)
-	fmt.Println("secret read OK")
+	fmt.Println("SECRET READED WITH EXIT")
 	return secretData, nil
 }
